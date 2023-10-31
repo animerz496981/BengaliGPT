@@ -6,7 +6,8 @@ with st.sidebar:
     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-st.title("✍️বাংলা GPT SCMS") if "messages" not in st.session_state:
+st.title("✍️বাংলা GPT SCMS") 
+if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "আপনাকে কিভাবে সাহায্য করতে পারি?"}]
 
 for msg in st.session_state.messages:
