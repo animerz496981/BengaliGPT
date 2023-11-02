@@ -2,13 +2,13 @@ import openai
 import streamlit as st
 
 with st.sidebar:
-    openai_api_key = st.text_input("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", key="chatbot_api_key", type="password")
+    openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-st.title("✍️বাংলা GPT SCMS")
-st.caption("🚀 A streamlit chatbot powered by SuryaPal LLM")
+st.title("Bengali Chatbot")
+st.caption("Surya LLM")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
@@ -17,7 +17,7 @@ for msg in st.session_state.messages:
 
 if prompt := st.chat_input():
     if not openai_api_key:
-        st.info("অনুগ্রহ করে আপনার Animerz প্রমাণীকরণ কী লিখুন")
+        st.info("Please add your Animerz Key")
         st.stop()
 
     openai.api_key = openai_api_key
